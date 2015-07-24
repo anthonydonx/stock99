@@ -1,0 +1,30 @@
+package wts.trlinkdashboardservice.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import wts.trlinkdashboardservice.dao.AgentReportDAO;
+import wts.trlinkdashboardservice.dao.CommonDAO;
+import wts.trlinkdashboardservice.model.AgentReportVO;
+
+@Component
+public class AgentReportManager extends AbstractService<AgentReportVO>{
+
+	@Autowired
+	AgentReportDAO agentreportDAO;
+	
+	@Override
+	public CommonDAO<AgentReportVO> getDAO() {
+		return agentreportDAO;
+	}
+	public  List<AgentReportVO> getAgentSlownessForGivenDate(final String requesttime){
+		List<AgentReportVO> list=agentreportDAO.getAgentSlownessForGivenDate(requesttime);
+		return list;
+	}
+	public  List<AgentReportVO> getAgentSortLess1(final String requesttime){
+		List<AgentReportVO> list=agentreportDAO.getAgentSortLess1(requesttime);
+		return list;
+	}
+}

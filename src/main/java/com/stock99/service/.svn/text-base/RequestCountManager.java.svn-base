@@ -1,0 +1,25 @@
+package wts.trlinkdashboardservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import wts.trlinkdashboardservice.dao.CommonDAO;
+import wts.trlinkdashboardservice.dao.RequestCountDAO;
+import wts.trlinkdashboardservice.model.RequestCountVO;
+@Component
+public class RequestCountManager extends AbstractService<RequestCountVO>{
+	@Autowired
+	RequestCountDAO requestCountDAO;
+
+	@Override
+	public CommonDAO<RequestCountVO> getDAO() {
+		return requestCountDAO;
+	}
+
+	
+	
+	
+	
+	
+	
+}

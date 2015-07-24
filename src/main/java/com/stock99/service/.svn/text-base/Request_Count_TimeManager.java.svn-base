@@ -1,0 +1,56 @@
+package wts.trlinkdashboardservice.service;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import wts.trlinkdashboardservice.dao.CommonDAO;
+import wts.trlinkdashboardservice.dao.Request_Count_TimeDAO;
+import wts.trlinkdashboardservice.model.Request_Count_TimeVO;
+
+@Component
+public class Request_Count_TimeManager extends
+		AbstractService<Request_Count_TimeVO> {
+	@Autowired
+	Request_Count_TimeDAO request_Count_TimeDAO;
+
+	@Override
+	public CommonDAO<Request_Count_TimeVO> getDAO() {
+
+		return request_Count_TimeDAO;
+	}
+	
+	public  List<Request_Count_TimeVO> getRequestCountForGivenDate(final String requestDate){
+		List<Request_Count_TimeVO> list=request_Count_TimeDAO.getRequestCountForGivenDate(requestDate);
+		Collections.sort(list,new RequestCountTimeComparator());
+		return list;
+	}
+	public  List<Request_Count_TimeVO> getDateBetween(final String fromDate,final String toDate){
+		List<Request_Count_TimeVO> list=request_Count_TimeDAO.getGivenDateBetween(fromDate,toDate);
+		//Collections.sort(list,new RequestCountTimeComparator());
+		return list;
+	}
+	
+}
+		class RequestCountTimeComparator implements Comparator<Request_Count_TimeVO>{
+
+			@Override
+			public int compare(Request_Count_TimeVO o1, Request_Count_TimeVO o2) {
+				if(o1==null){
+					return 1;
+				}
+				if(o2==null){
+					return -1;
+				}
+				if(o1.getRequesttime()<o2.getRequesttime()){
+					return -1;
+				}else if(o1.getRequesttime()>o2.getRequesttime()){
+					return 1;
+				}
+				return 0;
+			}
+			
+		}

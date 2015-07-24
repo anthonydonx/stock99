@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/trlinkdashboardservice/!svn/ver/1/src/main/java/wts/trlinkdashboardservice/service
+END
+Request_Count_TimeManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/trlinkdashboardservice/!svn/ver/1/src/main/java/wts/trlinkdashboardservice/service/Request_Count_TimeManager.java
+END
+RequestCountManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/trlinkdashboardservice/!svn/ver/1/src/main/java/wts/trlinkdashboardservice/service/RequestCountManager.java
+END
+TypeCountManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/trlinkdashboardservice/!svn/ver/1/src/main/java/wts/trlinkdashboardservice/service/TypeCountManager.java
+END
+AgentReportManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/trlinkdashboardservice/!svn/ver/1/src/main/java/wts/trlinkdashboardservice/service/AgentReportManager.java
+END
+AbstractService.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/trlinkdashboardservice/!svn/ver/1/src/main/java/wts/trlinkdashboardservice/service/AbstractService.java
+END
+ServerSlownessManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/trlinkdashboardservice/!svn/ver/1/src/main/java/wts/trlinkdashboardservice/service/ServerSlownessManager.java
+END

@@ -1,0 +1,31 @@
+package wts.trlinkdashboardservice.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import wts.trlinkdashboardservice.dao.CommonDAO;
+import wts.trlinkdashboardservice.dao.ServerSlownessDAO;
+import wts.trlinkdashboardservice.model.ServerSlownessVO;
+
+@Component
+public class ServerSlownessManager extends
+		AbstractService<ServerSlownessVO> {
+	@Autowired
+	ServerSlownessDAO serverSlownessDAO;
+
+	@Override
+	public CommonDAO<ServerSlownessVO> getDAO() {
+
+		return serverSlownessDAO;
+	}
+	
+	public  List<ServerSlownessVO> getRequestCountForGivenDate(String requesttime){
+		List<ServerSlownessVO> list=serverSlownessDAO.getRequestCountForGivenDate(requesttime);
+		return list;
+	}
+	
+	
+}
+		
